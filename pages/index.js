@@ -15,7 +15,7 @@ export default function Home() {
   const deleteId = useSelector((state) => state.app.client.deleteId)
   const dispatch = useDispatch()
 
-  const queryclient = useQueryClient();
+  const queryclient = useQueryClient(); 
 
   const handler = () => {
     dispatch(toggleChangeAction())
