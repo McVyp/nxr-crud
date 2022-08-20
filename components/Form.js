@@ -1,14 +1,13 @@
-import AddUserForm from "./addUSerForm";
-import UpdateUserForm from "./updateUSerForm";
+import UpdateUserForm from "./updateUserForm";
+import AddUserForm from "./addUserForm";
 
-export default function Form() {
+export default function Form(){
 
-    const flag= true;
+    const flag = false;
 
-   return(
-    <div className='container mx-auto py-2'>
-        {flag? <AddUserForm /> : <UpdateUserForm />}
-    </div>
-  
-   )
+    return (
+        <div className="container mx-auto py-5">
+            { flag ? <AddUserForm /> : <UpdateUserForm /> }
+        </div>
+    )
 }
