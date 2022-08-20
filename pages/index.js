@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { BiCheck, BiUserPlus, BiX } from "react-icons/bi";
-import Table from '../components/Table';
-import Form from '../components/Form';
+import Table from '../components/table';
+import Form from '../components/form';
 import { useState } from 'react';
 import { useSelector, useDispatch  } from 'react-redux';
 import { toggleChangeAction, deleteAction } from '../redux/reducer';
