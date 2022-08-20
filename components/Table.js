@@ -12,7 +12,7 @@ export default function Table() {
     if(isLoading) return <div>Employee is loading</div>
     if(isError) return <div>Got Error {error}</div>
   return (
-    <table className=' mx-auto table-auto'>
+    <table className=' mx-auto table-auto mt-4'>
         <thead>
             <tr className='bg-gray-800'>
                 <th className='px-16 py-2'>
@@ -49,7 +49,7 @@ function Tr({_id, name, avatar, email, salary, date, status }) {
     const visible = useSelector((state) => state.app.client.toggleForm)
     const dispatch = useDispatch()
     const onUpdate = () =>{
-        dispatch(toggleChangeAction())
+        dispatch(toggleChangeAction(_id))
         if(visible){
             dispatch(updateAction(_id))
         }
