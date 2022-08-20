@@ -1,8 +1,10 @@
 import React from 'react';
 import {FiEdit, FiTrash2} from 'react-icons/fi'
 import data from '../db/data.json';
+import { getUser } from '../lib/helper';
 
 export default function Table() {
+    getUser().then(res=>console.log(res));
   return (
     <table className='min-w-full table-auto'>
         <thead>
@@ -40,7 +42,7 @@ function Tr({id, name, avatar, email, salary, date, status }) {
     return (
         <tr className='bg-gray-50 text-center'>
                 <td className='px-16 py-2 flex flex-row items-center'>
-                    <img src={avatar || '#'} alt=''/>
+                    <img className="h-8 w-8 rounded-full object-cover" src={avatar || '#'} alt=''/>
                     <span className='text-center ml-2 font-semibold'>{name || unknown}</span>
                 </td>
                 <td className='px-16 py-2'>
