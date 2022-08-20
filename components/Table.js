@@ -3,7 +3,7 @@ import {FiEdit, FiTrash2} from 'react-icons/fi'
 import { getUsers } from '../lib/helper';
 import {useQuery} from 'react-query';
 import {useSelector, useDispatch} from 'react-redux';
-import {toggleChangeAction} from '../redux/reducer'
+import {toggleChangeAction, updateAction} from '../redux/reducer'
 
 export default function Table() {
 
@@ -44,13 +44,15 @@ export default function Table() {
   )
 }
 
-function Tr({id, name, avatar, email, salary, date, status }) {
+function Tr({_id, name, avatar, email, salary, date, status }) {
 
     const visible = useSelector((state) => state.app.client.toggleForm)
     const dispatch = useDispatch()
     const onUpdate = () =>{
         dispatch(toggleChangeAction())
-        console.log(visible)
+        if(visible){
+            dispatch(updateAction(_id))
+        }
     }
     return (
         <tr className='bg-gray-50 text-center'>
