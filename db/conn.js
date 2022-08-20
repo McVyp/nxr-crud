@@ -1,4 +1,3 @@
-// require('dotenv').config({path: '../.env'})
 
 const MONGO_URI= "mongodb+srv://admin:admin@nxt-crud.zdhhsty.mongodb.net/?retryWrites=true&w=majority"
 import mongoose from 'mongoose';
