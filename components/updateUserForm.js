@@ -1,7 +1,5 @@
 import { useReducer } from "react"
 import { BiBrush } from 'react-icons/bi'
-import Success from "./success"
-import Bug from "./bug"
 import { useQuery, useMutation, useQueryClient } from "react-query"
 import { getUser, getUsers, updateUser } from "../lib/helper"
 
