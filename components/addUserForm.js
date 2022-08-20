@@ -1,6 +1,6 @@
 import { useReducer } from "react"
 import { BiPlus } from 'react-icons/bi'
-import Success from "./success"
+import Success from "./Success"
 import Bug from "./bug"
 import { useQueryClient, useMutation } from "react-query"
 import { addUser, getUsers } from "../lib/helper"
