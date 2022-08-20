@@ -1,9 +1,13 @@
 import React from 'react';
 import {FiEdit, FiTrash2} from 'react-icons/fi'
 import { getUsers } from '../lib/helper';
-import {useQuery} from 'react-query'; 
+import {useQuery} from 'react-query';
+import {useSelector} from 'react-redux'
 
 export default function Table() {
+
+    const state = useSelector((state) => state)
+    console.log(state)
     const {isLoading, isError, data, error} = useQuery("users", getUsers)
     if(isLoading) return <div>Employee is loading</div>
     if(isError) return <div>Got Error {error}</div>

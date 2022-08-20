@@ -1,12 +1,16 @@
 import '../styles/globals.css';
 import {QueryClientProvider, QueryClient} from 'react-query';
+import { store } from '../redux/store';
+import { Provider } from 'react-redux';
 
 // create client
 const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }) {
   return(
     <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>   
     </QueryClientProvider>
   ) 
 }
