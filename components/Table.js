@@ -3,7 +3,7 @@ import {FiEdit, FiTrash2} from 'react-icons/fi'
 import { getUsers } from '../lib/helper';
 import {useQuery} from 'react-query';
 import {useSelector, useDispatch} from 'react-redux';
-import {toggleChangeAction, updateAction} from '../redux/reducer'
+import {toggleChangeAction, updateAction, deleteAction} from '../redux/reducer'
 
 export default function Table() {
 
@@ -54,6 +54,12 @@ function Tr({_id, name, avatar, email, salary, date, status }) {
             dispatch(updateAction(_id))
         }
     }
+
+    const onDelete = () =>{
+        if(!visible){
+            dispatch(deleteAction(_id))
+        }
+    }
     return (
         <tr className='bg-gray-50 text-center'>
                 <td className='px-16 py-2 flex flex-row items-center'>
@@ -74,7 +80,7 @@ function Tr({_id, name, avatar, email, salary, date, status }) {
                 </td>
                 <td className='px-16 py-2 flex justify-around gap-5'>
                     <button onClick ={onUpdate} className='cursor'><FiEdit size={25} color="rgb(32,197,94)"/></button>
-                    <button className='cursor'><FiTrash2 size={25} color="rgb(244,63,94)"/></button>           
+                    <button onClick ={onDelete} className='cursor'><FiTrash2 size={25} color="rgb(244,63,94)"/></button>           
                 </td>
             </tr>
     )
