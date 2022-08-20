@@ -6,7 +6,7 @@ export default function Form() {
     const flag= true;
 
    return(
-    <div className='container mx-auto'>
+    <div className='container mx-auto py-2'>
         {flag? <AddUserForm /> : <UpdateUserForm />}
     </div>
   

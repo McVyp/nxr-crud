@@ -12,7 +12,7 @@ export default function Table() {
     if(isLoading) return <div>Employee is loading</div>
     if(isError) return <div>Got Error {error}</div>
   return (
-    <table className='min-w-full table-auto'>
+    <table className=' mx-auto table-auto'>
         <thead>
             <tr className='bg-gray-800'>
                 <th className='px-16 py-2'>
