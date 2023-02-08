@@ -50,8 +50,7 @@ const [isDarkMode, setIsDarkMode] = useState(false);
       </Head>
       <DarkModeToggle className="flex " onToggle={setIsDarkMode} />
       <main className='py-5'>
-        <h1 className={`${isDarkMode ? 'text-white' : 'text-black'} text-xl md:text-5xl text-center font-bold py-10`}>Employee Management</h1>
-        
+        <h1 className={`${isDarkMode ? 'text-white' : 'text-black'} text-xl md:text-5xl text-center font-bold py-10`}>Employee Information System</h1>
 
         <div className="container mx-auto flex justify-between lg:p-4 py-5 border-b">
             <div className="left flex gap-3">
